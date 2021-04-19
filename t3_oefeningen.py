@@ -1,6 +1,6 @@
 def bmi (gewicht, lengte):
     resultaat = gewicht/lengte**2
-    t"return resultaat
+    return resultaat
 
 def omtrek_cirkel (r=4):
     resultaat = 2*r*3.14
