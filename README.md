@@ -1,5 +1,5 @@
 # prog2-exercises
-hey
+SHEEEESHHHH
 
 Schrijf code zodat de testen slagen.
 
@@ -17,7 +17,7 @@ Om de testen uit te voeren dienen jullie pytest
 te installeren:
 
 ```bash
-pip install pytest
+pip install black
 ```
 
 Nadien kunnen jullie de testen als volgt uitvoeren:

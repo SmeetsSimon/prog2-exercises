@@ -22,6 +22,11 @@ def volume_cilinder (r=2, h=4):
 
 
 def volume_kubus (zijde=2):
-    resultaat = zijde*zijde*zijde
+    if zijde < 0:
+        resultaat = 0
+    else:
+        resultaat = zijde*zijde*zijde
+
     return resultaat
+
 
