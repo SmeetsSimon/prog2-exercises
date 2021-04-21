@@ -1,5 +1,4 @@
 # prog2-exercises
-SHEEEESHHHH
 
 Schrijf code zodat de testen slagen.
 
