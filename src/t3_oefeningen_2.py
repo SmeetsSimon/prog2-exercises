@@ -29,7 +29,8 @@ def oppervlakte_cirkel(r):
 def omtrek_cirkel(r):
     """Return omtrek cirkel met straal r"""
     # Deze functie kan je gebruiken om het volume van de donut te berekenen.
-    return 0
+    result = 2 * r * math.pi
+    return result
 
 
 def volume_donut(r, R):
@@ -37,13 +38,20 @@ def volume_donut(r, R):
     waarbij r de dikte van de donut is, en R
     de grootte van de donut.
     """
-    return 0
+    if r == R:
+        return -1
+    else:
+        result = 2 * math.pi ** 2 * r ** 2 * R
+        return result
 
 
 def stats(punten):
-    """Return het gemiddelde, het maximum, het minimum en het aantal getallen
-    als een lijst met punten gegeven werd."""
-    return 0
+    gemiddelde = sum(punten) / len(punten)
+    maximum = max(punten)
+    minimum = min(punten)
+    aantal = len(punten)
+    resultaat = [gemiddelde, maximum, minimum, aantal]
+    return resultaat
 
 
 class Cirkel:
