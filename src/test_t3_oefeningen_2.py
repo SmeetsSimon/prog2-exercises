@@ -2,11 +2,11 @@ from t3_oefeningen_2 import (
     Cirkel,
     is_even,
     is_oneven,
+    is_palindroom,
     pythagoras,
     stats,
     volume_bol,
     volume_donut,
-    is_palindroom,
 )
 
 
@@ -32,7 +32,7 @@ def test_is_oneven_1():
 
 def test_is_oneven_2():
     result = is_oneven(2)
-    assert result is True
+    assert result is False
 
 
 def test_is_oneven_3():
@@ -71,14 +71,14 @@ def test_volume_donut_4_4():
 def test_stats_1():
     punten = [5]
     result = stats(punten)
-    assert result == (5.0, 5, 5, 1)
+    assert result == [5.0, 5, 5, 1]
 
 
 def test_stats_4():
     punten = [5, 9, 10, 8]
     result = stats(punten)
     assert abs(result[0] - 8.0) < 0.1
-    assert result[1:] == (10, 5, 4)
+    assert result[1:] == [10, 5, 4]
 
 
 def test_stats_6():
@@ -90,17 +90,33 @@ def test_stats_6():
     assert nr == 6
 
 
-def test_cirkel_straal_4():
+def test_cirkel_straal_4_omtrek():
     x = Cirkel(4)
     assert abs(x.omtrek() - 25.13) < 0.1
+
+
+def test_cirkel_straal_4_oppervlakte():
+    x = Cirkel(4)
     assert abs(x.oppervlakte() - 50.27) < 0.1
+
+
+def test_cirkel_straal_4_str():
+    x = Cirkel(4)
     assert f"{x}" == "cirkel met straal 4"
 
 
-def test_cirkel_straal_5():
+def test_cirkel_straal_5_omtrek():
     x = Cirkel(5)
     assert abs(x.omtrek() - 31.42) < 0.1
+
+
+def test_cirkel_straal_5_oppervlakte():
+    x = Cirkel(5)
     assert abs(x.oppervlakte() - 78.54) < 0.1
+
+
+def test_cirkel_straal_5_str():
+    x = Cirkel(5)
     assert f"{x}" == "cirkel met straal 5"
 
 
