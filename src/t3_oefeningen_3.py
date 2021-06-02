@@ -1,4 +1,5 @@
 def is_prime(x):
+
     """Geef True als x een priemgetal is, anders False
 
     Een priemgetal is een getal groter dan 1, dat geen product
@@ -9,16 +10,23 @@ def is_prime(x):
     https://nl.wikipedia.org/wiki/Priemgetal
     https://www.eff.org/press/archives/2009/10/14-0
     """
-    return 0
+    for i in range(2,x):
+        if x % i == 0:
+            return False
+    return True
+
 
 
 def fibonacci(n):
+
+
+
     """Geef het n-de getal in de rij van Fibonacci terug
 
     De rij van Fibonacci getallen zijn:
     0, 1, 1, 2, 3, 5, 8, ...
 
-    Hierbij is elk volgend getal, de som van de twee
+    Hierbij is elk volgend getal, de som van de twee/
     voorgaande getallen:
     0 + 1 = 1
     1 + 1 = 2
@@ -29,10 +37,18 @@ def fibonacci(n):
 
     https://nl.wikipedia.org/wiki/Rij_van_Fibonacci
     """
-    return 0
+    if n == 1:
+        return 0
+    if n == 2:
+        return 1
+
+    return fibonacci(n - 1) + fibonacci(n-2)
 
 
 def rekeningnummer_controlegetal(n):
+
+
+
     """Geef het controlegetal terug van rekeningnummer n
 
     Het controlegetal is het getal gevormd door de laatste
@@ -41,7 +57,9 @@ def rekeningnummer_controlegetal(n):
     Voor het rekeningnummer van Touring is dit bijvoorbeeld 49:
     068-9099786-49
     """
-    return 0
+    nummer = int(n[-2:])
+    return nummer
+
 
 
 def rekeningnummer_hoofdgetal(n):
@@ -56,8 +74,8 @@ def rekeningnummer_hoofdgetal(n):
     Voor het rekeningnummer van Telenet is dit bijvoorbeeld:
     Gegeven 405-0504611-48, dient het resultaat 4050504611 te zijn.
     """
-    return 0
-
+    nummer = int(n[10])
+    return nummer
 
 def is_geldig_rekeningnummer(n):
     """Geef True terug als het rekeningnummer geldig is, anders False.
