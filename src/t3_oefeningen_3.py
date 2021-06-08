@@ -57,9 +57,9 @@ def rekeningnummer_controlegetal(n):
     Voor het rekeningnummer van Touring is dit bijvoorbeeld 49:
     068-9099786-49
     """
-    nummer = int(n[-2:])
-    return nummer
-
+    controlenummer1 = n[-2]
+    controlenummer2 = n[-1]
+    return int(controlenummer1 + controlenummer2)
 
 
 def rekeningnummer_hoofdgetal(n):
@@ -74,8 +74,6 @@ def rekeningnummer_hoofdgetal(n):
     Voor het rekeningnummer van Telenet is dit bijvoorbeeld:
     Gegeven 405-0504611-48, dient het resultaat 4050504611 te zijn.
     """
-    nummer = int(n[10])
-    return nummer
 
 def is_geldig_rekeningnummer(n):
     """Geef True terug als het rekeningnummer geldig is, anders False.
@@ -91,7 +89,11 @@ def is_geldig_rekeningnummer(n):
     Gegeven 405-0504611-48, dient de rest bij deling van 4050504611 door 97
     48 te zijn.
     """
-    return 0
+    hoofd = rekeningnummer_hoofdgetal(n)
+    controle = rekeningnummer_controlegetal(n)
+    if hoofd % 97 == controle:
+        return True
+    return False
 
 
 def is_anagram(word1, word2):
@@ -119,4 +121,14 @@ def is_anagram(word1, word2):
 
     https://nl.wikipedia.org/wiki/Anagram
     """
-    return 0
+    word1 = word1.lower()
+    word2 = word2.lower()
+    word1 = word1.replace(" ", "")
+    word2 = word2.replace(" ", "")
+    word1 = sorted(word1)
+    word2 = sorted(word2)
+
+    if word1 == word2:
+        return True
+
+    return False

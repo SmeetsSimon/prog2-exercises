@@ -60,24 +60,39 @@ class Cirkel:
 
     def omtrek(self):
         """Return de omtrek van de cirkel met straal r"""
-        return 0
+        result = 2 * self.straal * math.pi
+        return result
 
     def oppervlakte(self):
         """Return de oppervlakte van de cirkel met straal r"""
-        return 0
+        result = 1 / 2 * 2 * math.pi * self.straal ** 2
+        return result
 
     def __str__(self):
         """Return een string zoals aangegeven in de testen"""
-        return ""
+        return f"cirkel met straal {self.straal}"
 
 
-def pythagoras(a, b):
-    """Return de lengte van de schuine zijde als de lengtes
-    van de rechthoekszijden gegeven zijn door a en b"""
-    return 0
+    def pythagoras(a, b):
+        """Return de lengte van de schuine zijde als de lengtes
+        van de rechthoekszijden gegeven zijn door a en b"""
+        if a <= 0:
+            return -1
+        elif b <= 0:
+            return -1
+        else:
+            result = math.sqrt(a ** 2 + b ** 2)
+            return result
 
 
 def is_palindroom(woord):
     """Return True als het omgekeerde van het woord gelijk
     is aan het woord zelf. Return anders False."""
-    return True
+    w = ",".join(woord)
+    w = reversed(w)
+    w = "".join(w)
+    w = w.replace(",", "")
+    if w == woord:
+        return True
+    else:
+        return False
