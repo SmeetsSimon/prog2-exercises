@@ -73,16 +73,16 @@ class Cirkel:
         return f"cirkel met straal {self.straal}"
 
 
-    def pythagoras(a, b):
-        """Return de lengte van de schuine zijde als de lengtes
-        van de rechthoekszijden gegeven zijn door a en b"""
-        if a <= 0:
-            return -1
-        elif b <= 0:
-            return -1
-        else:
-            result = math.sqrt(a ** 2 + b ** 2)
-            return result
+def pythagoras(a, b):
+    """Return de lengte van de schuine zijde als de lengtes
+    van de rechthoekszijden gegeven zijn door a en b"""
+    if a <= 0:
+        return -1
+    elif b <= 0:
+        return -1
+    else:
+        result = math.sqrt(a ** 2 + b ** 2)
+        return result
 
 
 def is_palindroom(woord):
